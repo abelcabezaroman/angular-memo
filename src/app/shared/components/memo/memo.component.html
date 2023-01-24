@@ -1,0 +1,17 @@
+<div *ngIf="successCount < (cards.length/2)" class="c-memo">
+  <div *ngFor="let card of cards">
+    <img *ngIf="card.selected" src="{{ card.img }}" alt="" />
+    <img *ngIf="card.checked" src="assets/tick.svg" alt="" />
+    <img
+      *ngIf="!card.selected && !card.checked"
+      (click)="checkCard(card)"
+      src="assets/universe.svg"
+      alt=""
+    />
+  </div>
+</div>
+
+<div *ngIf="successCount === (cards.length/2)">
+  <h2>Has terminado!</h2>
+  <button (click)="reset()">Reset game</button>
+</div>
