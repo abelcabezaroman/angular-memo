@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PlanetInterface } from '../../models/planet.interface';
+import { CardInterface } from '../../models/card.interface';
 
 @Component({
   selector: 'app-memo',
@@ -7,7 +7,7 @@ import { PlanetInterface } from '../../models/planet.interface';
   styleUrls: ['./memo.component.scss'],
 })
 export class MemoComponent implements OnInit {
-  @Input() cards: PlanetInterface[] = [
+  @Input() cards: CardInterface[] = [
     {
       id: 1,
       name: 'earth',
@@ -15,11 +15,11 @@ export class MemoComponent implements OnInit {
     },
   ];
 
-  initialCards?: PlanetInterface[];
+  initialCards?: CardInterface[];
 
   successCount = 0;
 
-  selectedCard?: PlanetInterface;
+  selectedCard?: CardInterface;
 
   ngOnInit() {
     this.initialCards = JSON.parse(JSON.stringify(this.cards)); //rompo la referencia del objeto
@@ -30,7 +30,7 @@ export class MemoComponent implements OnInit {
     return array.sort(() => 0.5 - Math.random());
   }
 
-  checkCard(card: PlanetInterface) {
+  checkCard(card: CardInterface) {
     if (this.selectedCard) {
       if (this.selectedCard.name === card.name) {
         card.checked = true;

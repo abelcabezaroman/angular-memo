@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PlanetInterface } from './shared/models/planet.interface';
+import { CardInterface } from './shared/models/card.interface';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { PlanetInterface } from './shared/models/planet.interface';
 export class AppComponent {
   title = 'angular-memo';
 
-  planetsExpert: PlanetInterface[] =  [
+  planetsExpert: CardInterface[] =  [
     {
         id: 1,
         name: 'earth',
@@ -73,7 +73,7 @@ export class AppComponent {
   ];
 
 
-  planetsNormal: PlanetInterface[] =  [
+  planetsNormal: CardInterface[] =  [
     {
         id: 1,
         name: 'earth',
@@ -107,7 +107,7 @@ export class AppComponent {
   ];
 
 
-  planetsEasy: PlanetInterface[] =  [
+  planetsEasy: CardInterface[] =  [
     {
         id: 1,
         name: 'earth',
