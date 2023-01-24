@@ -1,4 +1,4 @@
-<div *ngIf="successCount < (cards.length/2)" class="c-memo">
+<div  class="c-memo">
   <div *ngFor="let card of cards">
     <img *ngIf="card.selected" src="{{ card.img }}" alt="" />
     <img *ngIf="card.checked" src="assets/tick.svg" alt="" />
